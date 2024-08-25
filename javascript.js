@@ -1,37 +1,76 @@
+document.addEventListener('DOMContentLoaded', () => {
+    loadInitialItems(); // Load and display initial items
+    loadFromLocalStorage(); // Load and display saved items
+});
+
+function loadInitialItems() {
+    const initialItems = [
+        "Shinchan",
+        "Kazama",
+        "Himawari",
+        "Shero",
+        "Mitsy Nohara",
+        "Harry Nohara"
+    ];
+
+    const ul = document.getElementById("myUL");
+
+    initialItems.forEach(item => {
+        const li = document.createElement("li");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.onclick = function() { toggleChecked(this); };
+
+        const textNode = document.createTextNode(item);
+
+        const span = document.createElement("SPAN");
+        const closeText = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(closeText);
+        span.onclick = function() { removeElement(this); };
+
+        li.appendChild(checkbox);
+        li.appendChild(textNode);
+        li.appendChild(span);
+
+        ul.appendChild(li);
+    });
+}
+
 function newElement() {
-    var inputValue = document.getElementById("myInput").value;
+    const inputValue = document.getElementById("myInput").value;
     if (inputValue === '') {
         alert("You must write something!");
         return;
     }
 
-    var li = document.createElement("li");
+    const li = document.createElement("li");
 
-    var checkbox = document.createElement("input");
+    const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.onclick = function() { toggleChecked(this); };
 
-    var t = document.createTextNode(inputValue);
+    const textNode = document.createTextNode(inputValue);
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
+    const span = document.createElement("SPAN");
+    const closeText = document.createTextNode("\u00D7");
     span.className = "close";
-    span.appendChild(txt);
+    span.appendChild(closeText);
     span.onclick = function() { removeElement(this); };
 
     li.appendChild(checkbox);
-    li.appendChild(t);
+    li.appendChild(textNode);
     li.appendChild(span);
 
     document.getElementById("myUL").appendChild(li);
     document.getElementById("myInput").value = "";
 
-    // Save to localStorage
     saveToLocalStorage();
 }
 
 function toggleChecked(checkbox) {
-    var li = checkbox.parentElement;
+    const li = checkbox.parentElement;
     if (checkbox.checked) {
         li.classList.add("checked");
     } else {
@@ -41,7 +80,7 @@ function toggleChecked(checkbox) {
 }
 
 function removeElement(span) {
-    var li = span.parentElement;
+    const li = span.parentElement;
     li.remove();
     saveToLocalStorage();
 }
@@ -58,30 +97,30 @@ function saveToLocalStorage() {
 }
 
 function loadFromLocalStorage() {
-    const items = JSON.parse(localStorage.getItem('todoList')) || [];
-    
+    const savedList = JSON.parse(localStorage.getItem('todoList')) || [];
+
     // Clear existing list items
     document.getElementById("myUL").innerHTML = '';
 
     // Render saved items
-    items.forEach(item => {
-        var li = document.createElement("li");
+    savedList.forEach(item => {
+        const li = document.createElement("li");
 
-        var checkbox = document.createElement("input");
+        const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.onclick = function() { toggleChecked(this); };
         checkbox.checked = item.checked;
 
-        var t = document.createTextNode(item.text);
+        const textNode = document.createTextNode(item.text);
 
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
+        const span = document.createElement("SPAN");
+        const closeText = document.createTextNode("\u00D7");
         span.className = "close";
-        span.appendChild(txt);
+        span.appendChild(closeText);
         span.onclick = function() { removeElement(this); };
 
         li.appendChild(checkbox);
-        li.appendChild(t);
+        li.appendChild(textNode);
         li.appendChild(span);
 
         if (item.checked) {
@@ -91,5 +130,3 @@ function loadFromLocalStorage() {
         document.getElementById("myUL").appendChild(li);
     });
 }
-
-document.addEventListener('DOMContentLoaded', loadFromLocalStorage);

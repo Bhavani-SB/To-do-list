@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="javascript.js"></script>
+</head>
+<body>
+    <header>
+        <h1>TO DO LIST</h1>
+    </header>
+    <div id="myDIV" class="header">
+        <h2>To Do List</h2>
+        <input type="text" id="myInput" placeholder="Make your list..!">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li><input type="checkbox" onclick="toggleChecked(this)"> Shinchan <span class="close" onclick="removeElement(this)">×</span></li>
+        <li class="checked"><input type="checkbox" checked onclick="toggleChecked(this)"> Kazama <span class="close" onclick="removeElement(this)">×</span></li>
+        <li><input type="checkbox" onclick="toggleChecked(this)"> Himawari <span class="close" onclick="removeElement(this)">×</span></li>
+        <li><input type="checkbox" onclick="toggleChecked(this)"> Shero <span class="close" onclick="removeElement(this)">×</span></li>
+        <li><input type="checkbox" onclick="toggleChecked(this)"> Mitsy Nohara <span class="close" onclick="removeElement(this)">×</span></li>
+        <li><input type="checkbox" onclick="toggleChecked(this)"> Harry Nohara <span class="close" onclick="removeElement(this)">×</span></li>
+        
+    </ul>
+    
+</body>
+</html>

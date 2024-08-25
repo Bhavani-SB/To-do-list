@@ -1,18 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadInitialItems(); // Load and display initial items
+    // Load the initial items only if they are not already in localStorage
+    if (!localStorage.getItem('todoListInitialized')) {
+        loadInitialItems(); // Load initial items
+        localStorage.setItem('todoListInitialized', 'true'); // Set the flag to indicate initialization is done
+    }
     loadFromLocalStorage(); // Load and display saved items
 });
 
 function loadInitialItems() {
-    const initialItems = [
-        "Shinchan",
-        "Kazama",
-        "Himawari",
-        "Shero",
-        "Mitsy Nohara",
-        "Harry Nohara"
-    ];
-
     const ul = document.getElementById("myUL");
 
     initialItems.forEach(item => {
@@ -36,6 +31,8 @@ function loadInitialItems() {
 
         ul.appendChild(li);
     });
+
+    saveToLocalStorage(); // Save initial items to localStorage
 }
 
 function newElement() {

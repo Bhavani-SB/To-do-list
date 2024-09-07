@@ -1,39 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Load the initial items only if they are not already in localStorage
-    if (!localStorage.getItem('todoListInitialized')) {
-        loadInitialItems(); // Load initial items
-        localStorage.setItem('todoListInitialized', 'true'); // Set the flag to indicate initialization is done
-    }
-    loadFromLocalStorage(); // Load and display saved items
+    // Load from localStorage if available
+    loadFromLocalStorage();
 });
-
-function loadInitialItems() {
-    const ul = document.getElementById("myUL");
-
-    initialItems.forEach(item => {
-        const li = document.createElement("li");
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.onclick = function() { toggleChecked(this); };
-
-        const textNode = document.createTextNode(item);
-
-        const span = document.createElement("SPAN");
-        const closeText = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(closeText);
-        span.onclick = function() { removeElement(this); };
-
-        li.appendChild(checkbox);
-        li.appendChild(textNode);
-        li.appendChild(span);
-
-        ul.appendChild(li);
-    });
-
-    saveToLocalStorage(); // Save initial items to localStorage
-}
 
 function newElement() {
     const inputValue = document.getElementById("myInput").value;
@@ -96,34 +64,34 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     const savedList = JSON.parse(localStorage.getItem('todoList')) || [];
 
-    // Clear existing list items
-    document.getElementById("myUL").innerHTML = '';
+    // If there are items in localStorage, clear the current list and load those items
+    if (savedList.length > 0) {
+        document.getElementById("myUL").innerHTML = '';
+        savedList.forEach(item => {
+            const li = document.createElement("li");
 
-    // Render saved items
-    savedList.forEach(item => {
-        const li = document.createElement("li");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.onclick = function() { toggleChecked(this); };
+            checkbox.checked = item.checked;
 
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.onclick = function() { toggleChecked(this); };
-        checkbox.checked = item.checked;
+            const textNode = document.createTextNode(item.text);
 
-        const textNode = document.createTextNode(item.text);
+            const span = document.createElement("SPAN");
+            const closeText = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(closeText);
+            span.onclick = function() { removeElement(this); };
 
-        const span = document.createElement("SPAN");
-        const closeText = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(closeText);
-        span.onclick = function() { removeElement(this); };
+            li.appendChild(checkbox);
+            li.appendChild(textNode);
+            li.appendChild(span);
 
-        li.appendChild(checkbox);
-        li.appendChild(textNode);
-        li.appendChild(span);
+            if (item.checked) {
+                li.classList.add("checked");
+            }
 
-        if (item.checked) {
-            li.classList.add("checked");
-        }
-
-        document.getElementById("myUL").appendChild(li);
-    });
+            document.getElementById("myUL").appendChild(li);
+        });
+    }
 }

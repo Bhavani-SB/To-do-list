@@ -74,3 +74,88 @@ ul li input[type="checkbox"] {
 .close:hover {
     color: #ff6666;
 }
+/* Resetting margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling the body */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Light background */
+  }
+  
+  /* Styling the header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dfdede15; /* Dark background for header */
+    padding: 20px;
+    color: white;
+  }
+  
+  /* Styling the logo */
+  .logo img {
+    width: 50px; /* Adjust logo size */
+  }
+  
+  /* Styling the navigation buttons */
+  .nav-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-buttons button {
+    background-color: #007BFF; /* Primary button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Button hover effect */
+  .nav-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Main content styling */
+  main {
+    height: calc(100vh - 80px); /* Remaining height after header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 48px; /* Large font size */
+    text-shadow: 4px 4px 8px rgba(241, 239, 239, 0.635); /* Adding shadow behind text */
+    color: #9e9d9d; /* Dark text color */
+  }
+  .line {
+    width: 50%;
+    height: 1px;
+    background-color: #f2f1f1;
+    margin: 0;
+  }
+  .nav-buttons button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+  }
+
+  .nav-buttons button:hover {
+    background-color: #0056b3;
+  }

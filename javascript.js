@@ -95,3 +95,6 @@ function loadFromLocalStorage() {
         });
     }
 }
+function navigateTo(url) {
+    window.location.href = url; // Replace 'otherpage.html' with your actual file name
+  }

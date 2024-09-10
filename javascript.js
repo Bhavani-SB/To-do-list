@@ -98,3 +98,8 @@ function loadFromLocalStorage() {
 function navigateTo(url) {
     window.location.href = url; // Replace 'otherpage.html' with your actual file name
   }
+
+document.querySelector('.button').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
+  });

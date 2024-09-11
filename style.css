@@ -203,6 +203,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
+@media only screen and (max-width: 768px){
 
 .about-section {
     padding: 50px;
@@ -267,7 +268,7 @@ nav ul li a {
 .team-member p {
     color: #777;
 }
-
+}
 footer {
     background-color: #f2f1f1;
     color: white;

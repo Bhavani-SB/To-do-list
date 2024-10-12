@@ -1,7 +1,5 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Load from localStorage if available
+    // Load from localStorage when the page loads
     loadFromLocalStorage();
 });
 
@@ -33,6 +31,7 @@ function newElement() {
     document.getElementById("myUL").appendChild(li);
     document.getElementById("myInput").value = "";
 
+    // Save the new list to localStorage
     saveToLocalStorage();
 }
 
@@ -43,12 +42,14 @@ function toggleChecked(checkbox) {
     } else {
         li.classList.remove("checked");
     }
+    // Save changes to localStorage when items are checked/unchecked
     saveToLocalStorage();
 }
 
 function removeElement(span) {
     const li = span.parentElement;
     li.remove();
+    // Save changes to localStorage after removing an item
     saveToLocalStorage();
 }
 
@@ -60,6 +61,7 @@ function saveToLocalStorage() {
             checked: li.querySelector('input[type="checkbox"]').checked
         });
     });
+    // Save the current list to localStorage as a string
     localStorage.setItem('todoList', JSON.stringify(items));
 }
 
@@ -67,7 +69,7 @@ function loadFromLocalStorage() {
     const savedList = JSON.parse(localStorage.getItem('todoList')) || [];
 
     if (savedList.length > 0) {
-        document.getElementById("myUL").innerHTML = '';
+        document.getElementById("myUL").innerHTML = '';  // Clear the current list before loading
         savedList.forEach(item => {
             const li = document.createElement("li");
 
@@ -88,11 +90,11 @@ function loadFromLocalStorage() {
             li.appendChild(textNode);
             li.appendChild(span);
 
+            if (item.checked) {
+                li.classList.add("checked");
+            }
+
             document.getElementById("myUL").appendChild(li);
         });
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3a2aaa1b7a1454220a394c5766c979aa2c8b69bd

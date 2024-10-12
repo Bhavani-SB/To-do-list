@@ -91,4 +91,8 @@ function loadFromLocalStorage() {
             document.getElementById("myUL").appendChild(li);
         });
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3a2aaa1b7a1454220a394c5766c979aa2c8b69bd

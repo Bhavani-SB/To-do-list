@@ -22,10 +22,13 @@
         @media only screen and (max-width: 768px) {
             body {
                 background-image: url('study family for phone.jpg');
+<<<<<<< HEAD
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
+=======
+>>>>>>> 3a2aaa1b7a1454220a394c5766c979aa2c8b69bd
             }
             .about-section {
                 padding: 50px;
@@ -61,7 +64,11 @@
         }
 
         .button:hover {
+<<<<<<< HEAD
             background-color: #0056b3; /* Darken button on hover */
+=======
+            background-color: #555;
+>>>>>>> 3a2aaa1b7a1454220a394c5766c979aa2c8b69bd
         }
 
         /* Smooth scrolling behavior */
@@ -79,19 +86,21 @@
 <body>
     <header>
         <div class="logo">
-            <img src="shinchan logo.jfif" alt="Logo"> <!-- Replace with your logo image path -->
+            <img src="shinchan logo.jfif" alt="Logo">
         </div>
         <!-- Navigation buttons -->
         <div class="nav-buttons">
             <button class="button" onclick="location.href='index.html'">Home</button>
-            <a href="#about-section" class="button" id="a">About</a>
-            <a href="#team-section" class="button" id="a">Contact</a>
+            <a href="#about-section" class="button" id="aboutBtn">About</a>
+            <a href="#team-section" class="button" id="contactBtn">Contact</a>
         </div>
     </header>
+
     <div id="quote" class="container">
-       <p style="text-align: center; text-shadow: #100101;">You're not lazy,You're just on energy</p> 
+       <p style="text-align: center; text-shadow: #100101;">You're not lazy, You're just on energy</p> 
     </div>
-    <div id="myDIV" class="header" id="lists">
+
+    <div id="myDIV" class="header">
         <h2>To Do List</h2>
         <input type="text" id="myInput" placeholder="Make your list..!">
         <span onclick="newElement()" class="addBtn">Add</span>
@@ -108,60 +117,31 @@
 
     <section id="about-section" class="about-section">
         <div class="container">
-            <section id="about-section" class="about-section">
             <h1>About Our Project</h1>
-            <p>
-                Our project, a task management web page, helps users organize and prioritize their daily tasks efficiently.This project leads to complete you're daily tasks </p>
+            <p>Our project, a task management web page, helps users organize and prioritize their daily tasks efficiently. This project leads to completing your daily tasks.</p>
             <h1>About Us</h1>
-            <p>
-                We are doing 3rd year Computer Science Enginnering in PET Enginnering College. We decided to create a Web page after completing our study of Web Developing Course.So that we done this Project.
+            <p>We are 3rd-year Computer Science Engineering students at PET Engineering College. We decided to create a webpage after completing our Web Development Course. This is the outcome of that project.</p>
         </div>
     </section>
 
     <section class="team-section" id="team-section">
         <div class="container">
-            <section class="team-section" id="team-section">
             <h2>Meet the Team</h2>
             <div class="team-grid">
                 <div class="team-member">
-                   
                     <h3>S.Bhavani</h3>
                     <p>Developer</p>
-                    <a href="mailto:sb.bhavani.sb@gmail.com">
-                        <img src="e mail.webp" id="email">
-                    </a>
+                    <a href="mailto:sb.bhavani.sb@gmail.com"><img src="e mail.webp" id="email"></a>
                     <a href="https://www.linkedin.com/in/sb-bhavani-sb"><img src="In.jfif" id="In"></a>
                 </div>
                 <div class="team-member">
-                    
                     <h3>B.Harini Suba Muppidathi</h3>
                     <p>Designer</p>
                     <a href="mailto:muthubala0211@gmail.com"><img src="e mail.webp" id="email"></a>
                     <a href="https://www.linkedin.com/in/b-harini-suba-muppidathi-b147ba321/"><img src="In.jfif" id="In"></a>
                 </div>
-                <div class="team-member">
-                   
-                    <h3>S.Monika Sen</h3>
-                    
-                    <p>Tester</p>
-                    <a href="mailto:Senmonika2004@gmail.com"><img src="e mail.webp" id="email"></a>
-                </div>
-                <div class="team-member">
-                   
-                    <h3>F.Micheal Jeba Narmatha</h3>
-                    
-                    <p>Tester</p>
-                    <a href="mailto:muthubala0211@gmail.com"><img src="e mail.webp" id="email"></a>
-                </div>
-                <div class="team-member">
-                    
-                    <h3>S.Balasundhari</h3>
-                    
-                    <p>Tester</p>
-                    <a href="mailto:balas2003at@gmail.com"><img src="e mail.webp" id="email"></a>
-                </div>
+                <!-- Add the other team members similarly -->
             </div>
-            </section>
         </div>
     </section>
 

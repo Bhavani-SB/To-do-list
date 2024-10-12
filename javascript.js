@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Load from localStorage if available
     loadFromLocalStorage();
@@ -64,7 +66,6 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     const savedList = JSON.parse(localStorage.getItem('todoList')) || [];
 
-    // If there are items in localStorage, clear the current list and load those items
     if (savedList.length > 0) {
         document.getElementById("myUL").innerHTML = '';
         savedList.forEach(item => {
@@ -87,19 +88,7 @@ function loadFromLocalStorage() {
             li.appendChild(textNode);
             li.appendChild(span);
 
-            if (item.checked) {
-                li.classList.add("checked");
-            }
-
             document.getElementById("myUL").appendChild(li);
         });
     }
 }
-function navigateTo(url) {
-    window.location.href = url; // Replace 'otherpage.html' with your actual file name
-  }
-
-document.querySelector('.button').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
-  });

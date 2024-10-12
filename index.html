@@ -10,12 +10,11 @@
     <script defer src="javascript.js"></script>
     <style>
         body {
-            background-image: url('study family.jpg'); /* Specify your image URL */
-            background-size: cover; /* Cover the entire page */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Prevent the background from repeating */
-            background-attachment: fixed; /* Keep the background image fixed */
-            
+            background-image: url('study family.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             height: 100vh;
         }
 
@@ -23,9 +22,9 @@
         @media only screen and (max-width: 768px) {
             body {
                 background-image: url('study family for phone.jpg');
-                background-size: cover; /* Cover the entire page */
-                background-position: center; /* Center the background image */
-                background-repeat: no-repeat; /* Prevent the background from repeating */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
                 background-attachment: fixed;
             }
             .about-section {
@@ -34,13 +33,11 @@
                 text-align: center;
                 border-radius: 10px;
                 margin: 30px;
-
             }
 
             .about-section h1 {
                 font-size: 2.5rem;
                 margin-bottom: 1.5rem;
-    
             }
 
             .about-section p {
@@ -48,27 +45,36 @@
                 max-width: 800px;
                 margin: 0 auto 1.5rem auto;
             }
-
         }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
             color: white;
+            background-color: #007bff; /* Make button blue */
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
             border: none;
             cursor: pointer;
         }
+
         .button:hover {
-            background-color: #555; /* Darken button on hover */
+            background-color: #0056b3; /* Darken button on hover */
         }
+
         /* Smooth scrolling behavior */
         html {
             scroll-behavior: smooth;
         }
+
+        /* Strikethrough for completed items */
+        .checked {
+            text-decoration: line-through;
+        }
     </style>
+
 </head>
 <body>
     <header>

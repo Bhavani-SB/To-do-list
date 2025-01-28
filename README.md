@@ -1,0 +1,1 @@
+The To-Do List Web Application is a simple yet efficient tool designed to manage tasks. It enables users to add, update, and delete tasks through a user-friendly interface. The application uses HTML, CSS, and JavaScript for the frontend, while localStorage ensures task persistence even after the browser is closed, making it fully functional offline.
